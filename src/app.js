@@ -1,5 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
+
+const httpLogger = require('../api/middleware/httpLogger')
 const estimateRoute = require('../api/routes/estimate')
 
 const app = express()
@@ -10,6 +12,8 @@ app.use((req,res,next) => {
     res.setHeader('Access-Control-Allow-Methods', 'POST')
     next()
 })
+
+app.use(httpLogger)
 
 app.use(bodyParser.json())
 
