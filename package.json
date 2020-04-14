@@ -13,6 +13,7 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
-    "body-parser": "^1.19.0"
+    "body-parser": "^1.19.0",
+    "xml2js": "^0.4.23"
   }
 }
