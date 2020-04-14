@@ -1,5 +1,6 @@
 const express = require('express')
 const xml = require('xml2js')
+const fs = require('fs')
 
 const covid19ImpactEstimator = require('../scripts/estimator')
 
@@ -59,6 +60,13 @@ router.post('/xml', (req,res,next) => {
             message: "Incorrect data format was passed."
          }))
     }   
+})
+
+router.get('/logs', (req,res,next) => {
+    fs.readFile('./logs/all-logs.log', (err,data) => {
+        if (err) throw err
+        res.send(data)
+    })
 })
 
 module.exports = router
