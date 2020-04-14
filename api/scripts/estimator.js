@@ -8,6 +8,12 @@ const discardQuotient = ( floatingPointNumber ) => {
 
 const covid19ImpactEstimator = (data) => {
 
+    if(data.periodType.toLowerCase() == "weeks"){
+        data.timeToElapse = discardQuotient(data.timeToElapse * 7 )
+    } else if(data.periodType.toLowerCase() == "weeks"){
+        data.timeToElapse = discardQuotient(data.timeToElapse * 30 )
+    }
+    
     let impact = {}
     let severeImpact = {}
 
