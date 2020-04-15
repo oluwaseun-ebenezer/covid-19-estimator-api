@@ -67,5 +67,4 @@ const discardQuotient = (floatingPointNumber) => {
     };
   };
   
-  export default covid19ImpactEstimator;
-  
+module.exports = covid19ImpactEstimator;
