@@ -1,18 +1,18 @@
-const { createLogger, transports, format } = require('winston')
-	
-const logger = createLogger({
-    format: format.combine(
-        format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss:ms' }),
-        format.printf(info => `${info.message}`)
-    ),
-    transports: [
-        new transports.File({
-            filename: './logs/all-logs.log',
-            json: false,
-            maxsize: 5242880,
-            maxFiles: 5,
-        }),
-    ]
-})
+const { createLogger, transports, format } = require('winston');
 
-module.exports = logger
+const logger = createLogger({
+  format: format.combine(
+    format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss:ms' }),
+    format.printf((info) => `${info.message}`)
+  ),
+  transports: [
+    new transports.File({
+      filename: './logs/all-logs.log',
+      json: false,
+      maxsize: 5242880,
+      maxFiles: 5
+    })
+  ]
+});
+
+module.exports = logger;
