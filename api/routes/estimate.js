@@ -4,7 +4,7 @@ const fs = require('fs');
 
 const covid19ImpactEstimator = require('../scripts/estimator');
 
-const router = express.Router()
+const router = express.Router();
 
 const dataTest = (data) => {
   if (data.region) {
@@ -54,9 +54,9 @@ router.post('/json', (req, res) => {
 router.post('/xml', (req, res) => {
   res.set('Content-Type', 'application/xml');
   if (dataTest(req.body)) {
-    res.status(200).send(builder.buildObject( covid19ImpactEstimator(req.body)));
+    res.status(200).send(builder.buildObject(covid19ImpactEstimator(req.body)));
   } else {
-    res.status(404).send(builder.buildObject({ 
+    res.status(404).send(builder.buildObject({
       message: 'Incorrect data format was passed.'
     }));
   }
