@@ -53,6 +53,7 @@ router.post('/json', (req,res,next) => {
 })
 
 router.post('/xml', (req,res,next) => {
+    res.set('Content-Type', 'application/xml')
     if(dataTest(req.body)){
         res.status(200).send(builder.buildObject( covid19ImpactEstimator(req.body) ))
     } else{
