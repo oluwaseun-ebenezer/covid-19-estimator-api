@@ -29,9 +29,7 @@ const builder = new xml.Builder({
 
 router.post('/', (req, res) => {
   if (dataTest(req.body)) {
-    res.status(200).json({
-      result: covid19ImpactEstimator(req.body)
-    });
+    res.status(200).json(covid19ImpactEstimator(req.body));
   } else {
     res.status(404).json({
       message: 'Incorrect data format was passed.'
@@ -41,9 +39,7 @@ router.post('/', (req, res) => {
 
 router.post('/json', (req, res) => {
   if (dataTest(req.body)) {
-    res.status(200).json({
-      result: covid19ImpactEstimator(req.body)
-    });
+    res.status(200).json(covid19ImpactEstimator(req.body));
   } else {
     res.status(404).json({
       message: 'Incorrect data format was passed.'
