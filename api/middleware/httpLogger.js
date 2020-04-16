@@ -6,6 +6,6 @@ logger.stream = {
 };
 
 module.exports = morgan(
-  ':method\t\t:url\t\t:status\t\t:response-time[0] ms',
+  ':method\t\t:url\t\t:status\t\t:response-time[0]ms',
   { stream: logger.stream }
 );
