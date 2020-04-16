@@ -60,9 +60,9 @@ router.post('/xml', (req, res) => {
 
 router.get('/logs', (req, res) => {
   res.set('Content-Type', 'text/plain');
-  fs.readFile('./logs/all-logs.log', 'utf-8', (err, data) => {
+  fs.readFile('./logs/all-logs.log', (err, data) => {
     if (err) throw err;
-    res.send(data);
+    res.status(200).send(data.toString());
   });
 });
 
