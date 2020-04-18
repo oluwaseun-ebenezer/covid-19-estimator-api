@@ -1,4 +1,4 @@
-<h1>covid-19-estimator-api<h1>
+covid-19-estimator-api
 
 API endpoints:
 * POST  https://protected-thicket-07057.herokuapp.com/api/v1/on-covid-19/
